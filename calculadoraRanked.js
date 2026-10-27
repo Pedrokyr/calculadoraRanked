@@ -1,9 +1,13 @@
 let heroi = "Link"
-let vitorias = 97
-let derrotas = 20
+let vitorias = "120"
+let derrotas = "20"
 
 function calcularRanked(vitorias, derrotas) {
-    return vitorias - derrotas;
+  let totalPartidas = vitorias + derrotas;
+    let taxaVitoria = (vitorias / totalPartidas) * 100;
+    let saldoVitorias = vitorias - derrotas;
+    return saldoVitorias;  
+  return vitorias - derrotas;
 }
 
 function nivelHeroi(saldoVitorias) {
@@ -17,12 +21,11 @@ function nivelHeroi(saldoVitorias) {
         return "Ouro";
     } else if (saldoVitorias <= 90) {
         return "Diamante";
-    } else if (saldoVitorias <= 100) {
-        return "Lendário";
-    }
-
-    return "Imortal";
-}
+    } else if (saldoVitorias <= 100){
+        return "Lendário";}
+    else if (saldoVitorias <= 120) {
+        return "Imortal";}
+}    
 
 function exibirResultado() {
     let saldoVitorias = calcularRanked(vitorias, derrotas);
